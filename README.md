@@ -7,4 +7,4 @@ For the function in `views.py`, my reasoning was straightforward: I needed to di
 
 When it came to routing, I wanted it to be smooth and easy to follow, so I linked the views and URLs in a logical way. As for deployment, I made sure everything was correctly set up to run online, but the key was making sure the application worked well in production once it was deployed.
 
-![Graph](Client (browser).png)
+![Graph](./graph.png)
