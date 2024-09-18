@@ -1,6 +1,6 @@
 PWS link :
 
-Homework 2
+Assignment 2
 
 **Explain how you implemented the checklist above step-by-step (not just following the tutorial):**
 My approach to the implementation was to first think about the overall structure of the project and how the different components would fit together. My main goal was to set up the Django project and the "main" app in a way that covered all the requirements. I started by creating the project and app, keeping the required fields—`name`, `price`, and `description`—in mind for the model. I also wanted to make the model more flexible, so I added other fields like `stock` to manage the products better.
@@ -19,7 +19,7 @@ Django is a great starting point for learning software development because it of
 **Why is the Django model called an ORM?**
 Django's model is called an ORM (Object-Relational Mapping) because it allows developers to interact with the database using Python objects instead of writing SQL queries. The ORM maps database tables to Python classes, where each class represents a table and each attribute corresponds to a field in that table. This abstraction simplifies database operations, letting developers create, retrieve, update, and delete records using Python code. The Django ORM automatically handles translating these operations into SQL, making database management easier and more intuitive for developers working in an object-oriented language.
 
-Homework 3
+Assignment 3
 
 **Explain why we need data delivery in implementing a platform.**  
 Data delivery is essential in implementing a platform because it enables the efficient transfer of data between different components, services, or users. Without reliable data delivery, a platform cannot function smoothly, as users or systems would not be able to send, receive, or process the necessary information to perform their tasks. Proper data delivery ensures synchronization, communication, and overall system functionality.
@@ -43,3 +43,24 @@ Finally I add the other functions for apply the good format (JSON/XML) to the da
 ![Screen2](./postman_json.png)
 ![Screen3](./postman_xml_id.png)
 ![Screen4](./postman_json_id.png)
+
+Assignment 4
+
+**What is a UserCreationForm, explain its advantages and disadvantages?**  
+A `UserCreationForm` in Django is a built-in form that simplifies the process of creating a new user by providing predefined fields such as username, password, and password confirmation. Its advantages include ease of use, built-in validation, and security features, allowing developers to quickly implement user registration functionality. However, its disadvantages are limited customization out of the box and it may require additional work if the form needs to be extended for more complex user data or registration workflows.
+
+**What is the difference between authentication and authorization in Django, why are both important?**  
+Authentication in Django verifies the identity of a user, ensuring they are who they claim to be, typically through a login process. Authorization, on the other hand, determines what an authenticated user is allowed to do, such as access certain pages or perform specific actions. Both are crucial: authentication ensures that only legitimate users can access the system, while authorization controls their permissions, ensuring security by restricting access to sensitive or privileged parts of the platform.
+
+**What are cookies in web development, and how do Django use cookies to manage user sessions?**  
+Cookies in web development are small pieces of data stored on the user's browser that can be used to track, identify, or store information about the user across different requests. In Django, cookies are used to manage user sessions by storing a session ID that corresponds to data on the server, allowing the server to remember user-specific data, such as login status, across multiple requests without requiring the user to re-authenticate on each page load.
+
+**Are the use of cookies safe by default in web development, or are there risks that need to be noted?**  
+Cookies are not inherently safe by default and come with certain risks. If not handled properly, cookies can be vulnerable to attacks such as Cross-Site Scripting (XSS) or Cross-Site Request Forgery (CSRF). To mitigate these risks, developers should ensure cookies are marked as secure, especially for sensitive data, and use additional protections like `HttpOnly` and `SameSite` flags to prevent unauthorized access or misuse by attackers.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+I add first the register / login function with the necessity to be logged to access to the main page
+Then I test that by creating 2 users (username / password are in main/login.txt)
+Moreover I add the use of cookie for keeping in memory the last time of login for a certain user.
+At the end, I associate the Product model with the User.
+Finally I tested every functionnalities added.
