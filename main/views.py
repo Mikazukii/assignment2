@@ -16,15 +16,15 @@ from django.urls import reverse
 
 @login_required(login_url="/login")
 def show_main(request):
-    product_entries = ProductEntry.objects.all()
+    product_entries = ProductEntry.objects.filter(user=request.user)
 
     context = {
-        "username": request.user.username,
+        "name": request.user.username,
         # "name": "Naïm Baziz",
         "class": "PBP KKI",
         "npm": "2406394881",
         "product_entries": product_entries,
-        "last_login": request.COOKIES["last_login"],
+        # "last_login": request.COOKIES["last_login"],
     }
 
     return render(request, "main.html", context)
@@ -106,13 +106,13 @@ def logout_user(request):
     return response
 
 
-def create_mood_entry(request):
+def create_product_entry(request):
     form = ProductEntryForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
-        mood_entry = form.save(commit=False)
-        mood_entry.user = request.user
-        mood_entry.save()
+        product_entry = form.save(commit=False)
+        product_entry.user = request.user
+        product_entry.save()
         return redirect("main:show_main")
 
     context = {"form": form}
