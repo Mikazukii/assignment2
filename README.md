@@ -64,3 +64,38 @@ Then I test that by creating 2 users (username / password are in main/login.txt)
 Moreover I add the use of cookie for keeping in memory the last time of login for a certain user.
 At the end, I associate the Product model with the User.
 Finally I tested every functionnalities added.
+
+Assignment 5
+
+**Explain the priority order of multiple CSS selectors for an HTML element.**  
+In CSS, the priority order of selectors, also known as specificity, determines which styles are applied when multiple rules target the same element. The order of priority is as follows: inline styles (highest specificity), IDs (e.g., #header), classes (e.g., .menu), attributes (e.g., [type="text"]), and elements (e.g., div). The more specific a selector is, the higher its priority. If two selectors have the same specificity, the last one in the CSS file will take precedence. This hierarchy ensures that the intended styles are applied correctly without conflicts.
+
+**Why does responsive design become an important concept in web application development? Give examples of applications that have and have not implemented responsive design.**
+Responsive design is crucial in web application development because it ensures that applications are accessible and visually appealing across various devices and screen sizes. As users increasingly access the internet through smartphones and tablets, a responsive design adapts layouts and content to fit any screen, enhancing usability and user experience. Examples of applications with responsive design include Twitter and Airbnb, where the layout changes seamlessly between desktop and mobile views. Conversely, applications like some outdated news sites may lack responsive design, leading to poor usability on mobile devices.
+
+**Explain the differences between margin, border, and padding, and how to implement these three things.**  
+Margin, border, and padding are three critical properties in CSS that control spacing and layout around HTML elements. Margin is the outermost space that creates distance between an element and its neighboring elements, effectively pushing them away. Border is a line that wraps around the padding and content of an element, which can be styled in various ways (e.g., solid, dashed). Padding is the inner space between the content and the border, providing breathing room within the element. To implement these properties, you can use CSS syntax like margin: 10px;, border: 1px solid black;, and padding: 15px; to define the desired spacing.
+
+**Explain the concepts of flexbox and grid layout along with their uses.**
+Flexbox and Grid are powerful layout models in CSS that provide more control over the design of web pages. Flexbox is designed for one-dimensional layouts, allowing elements within a container to align and distribute space along a single axis (either row or column). It’s useful for creating responsive navigation bars or aligning items in a single line. Grid layout, on the other hand, is a two-dimensional layout system that allows you to design complex layouts by defining rows and columns. It is particularly effective for grid-based designs, such as image galleries or dashboard layouts, where elements need to be placed in specific locations on a grid. Both methods promote responsive design, making it easier to adapt layouts to various screen sizes.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial)!**
+For that assignment, I think about the differents function I want to add first like edit and delete function so I create functions for that. After that I make the routing of the function and then I go into appearance of the website. I try to create better interfaces for almost all the pages.
+
+Assignment 6
+
+**Explain the benefits of using JavaScript in developing web applications!**  
+JavaScript is essential for developing web applications as it enables interactivity and dynamic content on web pages. It allows developers to create responsive user interfaces that enhance user experience by enabling features like real-time updates, form validations, and animations. Additionally, JavaScript facilitates asynchronous programming through techniques like AJAX, which allows web applications to fetch data without reloading the page. The widespread support of JavaScript across all major browsers and its integration with various libraries and frameworks, such as React and Angular, further enhances its versatility and effectiveness in building modern web applications.
+
+**Explain why we need to use await when we call fetch(). What would happen if we don't use await?**  
+The `await` keyword is necessary when calling the `fetch()` function to ensure that the code execution pauses until the Promise returned by `fetch()` resolves, allowing us to handle the response correctly. If we don’t use `await`, the code continues executing without waiting for the fetch operation to complete, which can lead to errors when trying to access the response data. As a result, we may end up attempting to process data that hasn’t been received yet, causing undefined behavior or runtime errors in the application.
+
+**Why do we need to use the csrf_exempt decorator on the view used for AJAX POST?**  
+The `csrf_exempt` decorator is used on views handling AJAX POST requests to bypass the Cross-Site Request Forgery (CSRF) protection mechanism provided by frameworks like Django. AJAX requests often require authentication tokens to prevent CSRF attacks, but in cases where the front end does not send these tokens, applying `csrf_exempt` allows the view to process the request without the CSRF check. However, using this decorator should be done with caution, as it may expose the application to security vulnerabilities if not properly handled.
+
+**On this week's tutorial, the user input sanitization is done in the back-end as well. Why can't the sanitization be done just in the front-end?**  
+While front-end input sanitization helps improve user experience by providing immediate feedback, it should not be solely relied upon for security. Front-end sanitization can be bypassed by users who disable JavaScript or manipulate the client-side code. Therefore, implementing input sanitization in the back end is crucial for ensuring data integrity and security, as it protects against malicious inputs and potential attacks like SQL injection or XSS (Cross-Site Scripting). A robust security model requires validation and sanitization at both the front end and back end to safeguard the application.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial)**
+For this assignment I create a new function for using ajax and then I routed the function to a new page
+For that I also add a button to use ajax for creating product from the home page. Moreover I add script for the gestion of product in the homepage. Finally I protect my form from XSS.
