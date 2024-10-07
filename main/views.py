@@ -117,3 +117,28 @@ def create_product_entry(request):
 
     context = {"form": form}
     return render(request, "create_product_entry.html", context)
+
+
+def edit_product(request, id):
+    # Get mood entry based on id
+    mood = ProductEntry.objects.get(pk=id)
+
+    # Set mood entry as an instance of the form
+    form = ProductEntryForm(request.POST or None, instance=mood)
+
+    if form.is_valid() and request.method == "POST":
+        # Save form and return to home page
+        form.save()
+        return HttpResponseRedirect(reverse("main:show_main"))
+
+    context = {"form": form}
+    return render(request, "edit_product.html", context)
+
+
+def delete_product(request, id):
+    # Get product based on id
+    product = ProductEntry.objects.get(pk=id)
+    # Delete product
+    product.delete()
+    # Return to home page
+    return HttpResponseRedirect(reverse("main:show_main"))
