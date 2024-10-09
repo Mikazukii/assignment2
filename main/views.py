@@ -26,7 +26,7 @@ def show_main(request):
         "class": "PBP KKI",
         "npm": "2406394881",
         # "product_entries": product_entries,
-        "last_login": request.COOKIES["last_login"],
+        "last_login": request.COOKIES.get("last_login", "Unknown value"),
     }
 
     return render(request, "main.html", context)
