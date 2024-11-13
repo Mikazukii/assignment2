@@ -12,6 +12,7 @@ from main.views import (
     edit_product,
     delete_product,
     add_product_entry_ajax,
+    create_mood_flutter,
 )
 
 app_name = "main"
@@ -33,4 +34,5 @@ urlpatterns = [
         add_product_entry_ajax,
         name="add_product_entry_ajax",
     ),
+    path("create-flutter/", create_mood_flutter, name="create_mood_flutter"),
 ]
